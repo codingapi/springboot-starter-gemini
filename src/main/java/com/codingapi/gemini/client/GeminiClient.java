@@ -33,7 +33,7 @@ public class GeminiClient {
     private final HttpHeaders headers;
 
 
-    public GeminiClient(String version, String apiKey, String proxyHost, int proxyPort) {
+    public GeminiClient(String version, String apiKey, boolean proxyEnable, String proxyHost, int proxyPort) {
         this.apiKey = apiKey;
         this.baseUrl = "https://generativelanguage.googleapis.com/" + version + "/";
         this.restTemplate = new RestTemplate();
@@ -43,7 +43,7 @@ public class GeminiClient {
 
         SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
         requestFactory.setConnectTimeout(3000);
-        if (StringUtils.hasLength(proxyHost) && proxyPort > 0) {
+        if (proxyEnable && StringUtils.hasLength(proxyHost) && proxyPort > 0) {
             requestFactory.setProxy(new Proxy(Proxy.Type.HTTP, new InetSocketAddress(proxyHost, proxyPort)));
         }
         restTemplate.setRequestFactory(requestFactory);

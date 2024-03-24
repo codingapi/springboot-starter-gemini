@@ -12,4 +12,5 @@ public class GeminiProperties {
     private int proxyPort;
 
     private String version = "v1beta";
+    private boolean proxyEnable = true;
 }

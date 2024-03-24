@@ -19,6 +19,7 @@
 gemini.api-key={your gemini api key}
 gemini.proxy-host={your http proxy host}
 gemini.proxy-port={your http proxy port}
+gemini.proxy-enable={enable proxy, default is true}
 gemini.version={gemini api version, default is v1beta}
 ```
 

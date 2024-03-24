@@ -20,6 +20,7 @@ public class GeminiConfiguration {
         return new GeminiClient(
                 geminiProperties.getVersion(),
                 geminiProperties.getApiKey(),
+                geminiProperties.isProxyEnable(),
                 geminiProperties.getProxyHost(),
                 geminiProperties.getProxyPort());
     }
